@@ -1,0 +1,45 @@
+version: '2'
+services:
+# Database
+
+  mysql:
+    image: mysql:5.7
+    container_name: intern
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_USER: root
+      MYSQL_DATABASE: intern
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    networks: 
+      - default
+  # redis:
+  #   image: "redis:alpine"
+  #   ports: 
+  #     - "6379"
+
+
+# Products
+  server:
+    image: "realanmup/laradocker:latest"
+    container_name: intern_server
+    ports:
+      - "80:80"
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: intern
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    volumes:
+      - ./:/var/www/
+      - ./nginx:/etc/nginx/site-enabled
+    privileged: true
+    links:
+      - mysql
+      # - redis
+    networks: 
+      - default
+
