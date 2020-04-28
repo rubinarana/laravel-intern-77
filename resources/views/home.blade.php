@@ -43,7 +43,7 @@
                                     @endforeach
                                 </td>
                                 <td>
-                                    @if(auth()->user()->follows($u))
+                                    {{-- @if(auth()->user()->follows($u))
                                     <form action="{{ route('unfollow') }}" method="POST">
                                         @csrf
                                         <input type="hidden" value="{{$u->id}}" name="user_id">
@@ -55,13 +55,15 @@
                                         <input type="hidden" value="{{$u->id}}" name="user_id">
                                         <button type="submit">Follow</button>
                                     </form>
-                                    @endif
+                                    @endif --}}
+                                    <follow-unfollow v-bind:follows="{{ auth()->user()->follows($u) ? "true" : "false" }}" v-bind:user_id={{ $u->id}} ></follow-unfollow>
                                 </td>
                             </tr>
                         @endforeach
                     </table>
                     {{ $user->links() }}
                 </div>
+
             </div>
         </div>
     </div>

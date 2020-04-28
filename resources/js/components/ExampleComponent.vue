@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        I'm an Hero component.
                     </div>
                 </div>
             </div>
@@ -21,3 +21,10 @@
         }
     }
 </script>
+
+<style scoped>
+    .container {
+        font-size: 100px;
+    }
+
+</style>
