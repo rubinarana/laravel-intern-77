@@ -1929,20 +1929,36 @@ __webpack_require__.r(__webpack_exports__);
   // Functions that we can call inside template
   methods: {
     toggleFollow: function toggleFollow() {
-      this.current_follow = !this.current_follow;
+      if (this.current_follow) {
+        this.unfollow();
+      } else {
+        this.follow();
+      } // this.current_follow = !this.current_follow
+
     },
     follow: function follow() {
+      var that = this;
       axios.post("/follow", {
         user_id: this.user_id
-      }).then(function () {
-        debugger;
+      }).then(function (response) {
+        // console.log(response)
+        if (response.data && response.data.status && response.data.status == "success") {
+          that.current_follow = !that.current_follow;
+        } // debugger
+
       });
     },
     unfollow: function unfollow() {
+      var _this = this;
+
       axios.post("/unfollow", {
         user_id: this.user_id
-      }).then(function () {
-        debugger;
+      }).then(function (response) {
+        // console.log(response){
+        if (response.data && response.data.status && response.data.status == "success") {
+          _this.current_follow = !_this.current_follow;
+        } // debugger
+
       });
     }
   },
