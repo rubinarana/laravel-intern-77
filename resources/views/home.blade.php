@@ -31,7 +31,7 @@
                         @foreach($user as $u)
                             <tr>
                                 <td>
-                                    {{  $u->name }}
+                                    <a href="{{ url('/'.$u->username) }}">{{ $u->name }}</a>
                                 </td>
                                 <td>
                                     {{ $u->created_at }}

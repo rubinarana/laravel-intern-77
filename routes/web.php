@@ -39,6 +39,6 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-
-Route::get('/{username}', 'IndexController@show');
+Route::get('/profile', 'ProfileController@index');
+Route::get('/{username}', 'ProfileController@show');
 

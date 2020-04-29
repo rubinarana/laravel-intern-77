@@ -4,21 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class ProfileController extends Controller
 {
-    public function index() {
-
-        $user =  \App\User::with('following', 'followers')->find(1);
-        
-        $followers = $user->followers;
-        $following = $user->following;
-
-        // dd($followers);
-
-        return view('welcome')->with(['user' => $user, 'newInfo' => 'newvalue']);
-        // return view('welcome')->withFollowers($followers)->withFollowing($following);
+    public function index() 
+    {
+        $user = auth()->user();
+        return view('profile')->with('user', $user);
     }
-
 
     public function show($username) {
         // dd($username);
@@ -33,6 +25,5 @@ class IndexController extends Controller
         return view('profile', array('user' => $user, 'newInfo' => 'newwer'));
         
     }
-
-    // public
+    
 }

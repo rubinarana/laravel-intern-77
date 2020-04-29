@@ -15,14 +15,10 @@ class FollowerController extends Controller
             'user_id' => $user_id,
             'follower_id' => auth()->user()->id
         ]);
+        
+        $user = \App\User::with('following', 'followers')->find($user_id);
 
-        if($request->ajax()) {
-            return response()->json([
-                'status' => 'success'
-            ]);
-        }
-
-        return $this->ajax_response($request);
+        return $this->ajax_response($request, $user);
 
         
     }
@@ -39,14 +35,18 @@ class FollowerController extends Controller
         if($follower)
             $follower->delete();
         
-        return $this->ajax_response($request);
+        $user = \App\User::with('following', 'followers')->find($user_id);
+        
+        return $this->ajax_response($request, $user);
         
     }
 
-    private function ajax_response($request) {
+    private function ajax_response($request, $user) {
         if($request->ajax()) {
             return response()->json([
-                'status' => 'success'
+                'status' => 'success',
+                'follower' => $user->followers->count(),
+                'following' => $user->following->count()
             ]);
         }     
         return back();
