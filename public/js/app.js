@@ -1995,23 +1995,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['followers', 'following', 'user_id', 'follows', 'own_profile'],
   data: function data() {
     return {
       Followers: 0,
       Following: 0,
-      posts: 0
+      posts: 0,
+      something: "",
+      posts_data: []
     };
   },
   mounted: function mounted() {
     this.Followers = this.followers;
-    this.Following = this.following;
+    this.Following = this.following; // axios.get('/posts').then((response)=> {
+    //     this.posts_data = response.data.posts
+    // })
   },
   methods: {
     updated: function updated(e) {
-      this.Followers = e.follower;
-      this.Following = e.following;
+      this.Followers = this.validate(e.follower) ? e.follower : this.Followers;
+      this.Following = this.validate(e.following) ? e.following : this.Following;
+    },
+    validate: function validate(value) {
+      return value > -1 ? true : false;
+    },
+    create_post: function create_post() {
+      axios.post('/post/create', {
+        content: this.something
+      }).then(function (response) {}); // es6
+      // async functions in javacript
+    }
+  },
+  computed: {
+    communityCount: function communityCount() {
+      return this.Followers + this.Following;
     }
   }
 }); // hoisting
@@ -37704,13 +37727,35 @@ var render = function() {
           _vm._s(_vm.Following) +
           ")\n    "
       ),
-      _vm._v(" "),
+      _vm._v("\n    " + _vm._s(_vm.communityCount) + "\n    "),
       !_vm.own_profile
         ? _c("follow-unfollow", {
             attrs: { follows: _vm.follows, user_id: _vm.user_id },
             on: { updated: _vm.updated }
           })
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.something,
+            expression: "something"
+          }
+        ],
+        domProps: { value: _vm.something },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.something = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.create_post } }, [_vm._v("submit")])
     ],
     1
   )

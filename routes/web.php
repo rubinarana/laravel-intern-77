@@ -22,6 +22,11 @@ Auth::routes();
 Route::get('/', 'IndexController@index');
 // Route::get('/friends', 'FriendsController@index');
 
+Route::get('/testing', function() {
+    
+    
+});
+
 
 Route::resource('profile', Profile::class);
 Auth::routes();
@@ -40,5 +45,9 @@ Route::middleware(['auth'])->group(function() {
 });
 
 Route::get('/profile', 'ProfileController@index');
+
+
+// This route should be last
 Route::get('/{username}', 'ProfileController@show');
+
 

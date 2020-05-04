@@ -1,4 +1,4 @@
-<h2>{{$user->name}}</h2>
+<h2 class="h2">{{$user->name}}</h2>
 {{-- <h5>
     @if($user != auth()->user())
         <follow-unfollow :follows="{{ auth()->user()->follows($user) ? "true" : "false" }}" :user_id={{ $user->id}}></follow-unfollow>
