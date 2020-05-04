@@ -37,18 +37,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function followers()
-    {
-        return $this->hasMany(Followers::class, 'user_id');
-    }
+    // public function followers()
+    // {
+    //     return $this->hasMany(Followers::class, 'user_id');
+    // }
 
-    public function following()
-    {
-        return $this->hasMany(Followers::class, 'follower_id');
-    }
+    // public function following()
+    // {
+    //     return $this->hasMany(Followers::class, 'follower_id');
+    // }
 
-    public function follows(User $user)
+    // public function follows(User $user)
+    // {
+    //     return Followers::where('user_id', $user->id)->where('follower_id', auth()->user()->id)->first() ? true : false; 
+    // }
+
+     public function posts()
     {
-        return Followers::where('user_id', $user->id)->where('follower_id', auth()->user()->id)->first() ? true : false; 
+        return $this->hasMany(Post::class);
     }
 }
