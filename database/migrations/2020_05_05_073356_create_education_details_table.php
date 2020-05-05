@@ -17,6 +17,7 @@ class CreateEducationDetailsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('institute');
+            $table->string('degree');
             $table->date('started_date');
             $table->date('end_date');
             $table->foreign('user_id')->references('id')->on('users');
