@@ -15,10 +15,10 @@ class CreateExperiencesTable extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->string('work_place');
-            $table->string('status');
-            $table->string('joined');
+            $table->string('start_at');
+            $table->string('end_at');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

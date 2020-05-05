@@ -15,10 +15,9 @@ class CreateSocialLinksTable extends Migration
     {
         Schema::create('social_links', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->string('icon');
-            $table->string('url');
+            $table->string('link');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

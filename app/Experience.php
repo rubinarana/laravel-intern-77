@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Experience extends Model
 {
-    protected $fillable =['user_id','joined','status','work_place'];
+    protected $fillable =['work_place','user_id','start_at','end_at'];
 }
