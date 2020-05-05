@@ -17,9 +17,12 @@ class CreateUserProfilesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
-            $table->string('education_details');
-            $table->string('training')->nullable();
-            $table->timestamp('work_experience')->nullable();
+            
+            $table->string('contact_no');
+            $table->string('address');
+            $table->string('bio');
+
+            $table->foreign('user_id')->references('id')->on('users');
            
         });
     }
