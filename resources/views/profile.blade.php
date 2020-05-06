@@ -13,7 +13,7 @@
     <div class="col-sm-8">
         @foreach ([1,2, 3, 4] as $item)
             @include('components.posts')
-            <br>
+            <br></br>
         @endforeach
     </div>
 </div>
