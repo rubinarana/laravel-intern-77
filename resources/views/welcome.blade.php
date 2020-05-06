@@ -86,6 +86,7 @@
                     <span>Following: {{ $user->following->count() }} </span>
                     <span>Followers: {{ $user->followers->count() }} </span>
                 </div>
+                <p>test</p>
             </div>
         </div>
     </body>
