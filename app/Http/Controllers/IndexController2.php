@@ -10,4 +10,9 @@ class IndexController2 extends Controller
         $users = \App\User::paginate(10);
         return view('users_view')->with('users', $users);
     }
+    public function userdetail()
+	{
+		return view('skills');
+	}
+
 }

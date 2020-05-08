@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('skills', 'IndexController2@userdetail')->name('skills');
 
 Auth::routes();
 
@@ -27,6 +28,8 @@ Route::resource('profile', Profile::class);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 //  Route Grouping
 Route::middleware(['auth'])->group(function() {
