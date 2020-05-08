@@ -76,7 +76,7 @@ form{
            
             
                 <label for="Address">Address:</label><br>
-                <input type="text" id="Address" name=Address size="60" placeholder="Address" autocomplete="off" maxlength="20" pattern="[A-Za-z]{5,},[A-Za-z]{5,}" ><br>
+                <input type="text" id="Address" name=Address size="60" placeholder="Address (Format: Area,City)" autocomplete="off" maxlength="20" pattern="[A-Z]{1}[a-z]{3,},[A-Z]{1}[a-z]{3,}" ><br>
                 
                 
                     <label for="Bio">Bio:</label><br>

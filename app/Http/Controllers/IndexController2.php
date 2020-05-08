@@ -1,8 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Services\UserProfileServices;
 use App\userprofile;
+
+
+
+use App\Http\Requests\UserProfileRequest;
 use Illuminate\Http\Request;
+
 
 class IndexController2 extends Controller
 {
@@ -11,23 +18,9 @@ class IndexController2 extends Controller
         return view('users_view')->with('users', $users);
     }
 
-    public function userprofile(Request $request)
+    public function userprofile(UserProfileRequest $request)
     {
-        $data=request()->validate([
-         'Address'=>'required',
-         'Contact'=>'required',
-         'Bio'=>'required|min:20'
-        ]);
-        $user_id=auth()->user()->id;
-        $address=$request->input('Address');
-        $contact=$request->input('Contact');
-        $bio=$request->input('Bio');
-        UserProfile::firstOrCreate([
-            'user_id' => $user_id,
-            'address'=>$address,
-            'contact_no'=>$contact,
-            'bio'=>$bio
-        ]);
+        UserProfileServices::store($request);
         return back();
 
     }
