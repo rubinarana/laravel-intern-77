@@ -15,12 +15,12 @@ class IndexController2 extends Controller
 		return view('skills');
 	}
 
-	public function create(RegisterSkillRequest $request)
-	{
-		$skill=SkillService::registeredSkill($request);
-		if (!is_null($skill)) {
-			ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
-		}
-	}
+	// public function create(RegisterSkillRequest $request)
+	// {
+	// 	$skill=SkillService::registeredSkill($request);
+	// 	if (!is_null($skill)) {
+	// 		ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
+	// 	}
+	// }
 
 }
