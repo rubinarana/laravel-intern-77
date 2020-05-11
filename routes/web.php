@@ -38,7 +38,35 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/unfollow', 'FollowerController@unfollow')->name('unfollow');
 
 });
+Route::get('getExperience','indexController2@getExperience');
+Route::post('getExperience','indexController2@Experience');
+Route::view('/social_link',"social_links");
+
+Route::view('/experience',"experience");
+Route::post('/experiences','indexController2@experience')->name('sanjaya');
+
+Route::view('/social',"social");
+Route::post('/test','indexController2@Social')->name('socials');
+
+
+
+Route::get('socialSocial','SocialController@StoreSocial');
+Route::post('social_link_store','SocialController@StoreSocial');
+
+Route::any('/form',function(){
+    if(request()->isMethod('get'))
+        return view('social');
+    dd(request()->all());
+});
+
+
+
+
 
 Route::get('/profile', 'ProfileController@index');
 Route::get('/{username}', 'ProfileController@show');
+
+//Route::group(['prefix'=>'user',function(){
+//    Route::get('/HomeController@index')->name('user');
+//}]);
 

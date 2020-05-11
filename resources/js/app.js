@@ -22,6 +22,11 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('follow-unfollow', require('./components/FollowUnFollow.vue').default);
 Vue.component('profile-state', require('./components/profile_state.vue').default);
+Vue.component('social-form', require('./components/social-form.vue').default);
+Vue.component('experience-form', require('./components/experience-form.vue').default);
+
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
