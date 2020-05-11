@@ -34,5 +34,9 @@ class IndexController extends Controller
         
     }
 
+    public function fetch(){
+        return view('main');
+    }
+
     // public
 }
