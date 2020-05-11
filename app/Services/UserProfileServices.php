@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\userprofile;
 use Illuminate\Http\Request;
-
+use App\Repository\EloquentRepository;
 class UserProfileServices
 {
     public static function store(Request $request)
@@ -13,12 +13,10 @@ class UserProfileServices
         $address=$request->input('Address');
         $contact=$request->input('Contact');
         $bio=$request->input('Bio');
-        UserProfile::firstOrCreate([
-            'user_id' => $user_id,
-            'address'=>$address,
-            'contact_no'=>$contact,
-            'bio'=>$bio
-        ]);
+        
+        $eloquent=new EloquentRepository();
+        $eloquent->create($user_id,$address,$contact,$bio);
+        
         return back();
 
     }
