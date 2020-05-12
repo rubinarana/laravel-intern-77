@@ -38,7 +38,8 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/unfollow', 'FollowerController@unfollow')->name('unfollow');
     Route::get('/user/educationDetail', 'IndexController2@educationDetail')->name('educationDetail');
     Route::post('/user/addEducationalDetails', 'IndexController2@addEducationDetails')->name('addEducationDetails');
-
+    Route::post('/user/addEducationalDetails2', 'IndexController2@addEducationDetails2')->name('addEducationDetails2');
+    Route::get('/user/educationDetail2', 'IndexController2@educationDetail2')->name('educationDetail2');
 });
 
 Route::get('/profile', 'ProfileController@index');

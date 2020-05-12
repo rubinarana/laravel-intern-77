@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\EducationDetailService;
 
 class IndexController2 extends Controller
 {
@@ -15,26 +16,25 @@ class IndexController2 extends Controller
         $user = auth()->user();
         return view('EducationDetail')->with('user',$user);
     }
-    function addEducationDetails(Request $request){
-        $validation = array(
-            'institute'=>'required',
-            'degree'=>'required',
-            'started_date'=>'required',
-            'end_date'=>'required'
-            );
-
-    $request->validate($validation);
-    $user_id = $request->input('user_id');
-     
-    $educationDetail = \App\EducationDetail::Create([
-            'user_id'=> $request->get('user_id'),
-            'institute'=>$request->get('institute'),
-            'degree'=>$request->get('degree'),
-            'started_date'=>$request->get('started_date'),
-            'end_date'=>$request->get('end_date')
-        ]);
-        return back();
-
+    function educationDetail2(){
+        $user = auth()->user();
+        return view('EducationDetail2')->with('user',$user);
     }
-
+    function addEducationDetails(Request $request){
+        
+        // dd($request);
+        // $validation = array(
+        //     'institute'=>'required',
+        //     'degree'=>'required',
+        //     'started_date'=>'required',
+        //     'end_date'=>'required'
+        // );
+        
+        // $request->validate($validation);
+        
+        $educationDetail = EducationDetailService::insertEducationDetail($request);
+        
+        return back();
+    }
+    
 }
