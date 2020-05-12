@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,6 @@ Route::get('/', 'IndexController@index');
 
 
 Route::resource('profile', Profile::class);
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -44,6 +44,10 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/user/educationDetail2', 'IndexController2@educationDetail2')->name('educationDetail2');
 });
 
+Route::get('/portfolio', 'IndexController@fetch');
+
+Route::get('/user/references', 'IndexController2@references');
+Route::post('/user/references', 'IndexConroller2@addReferences');
 Route::get('/profile', 'ProfileController@index');
 Route::get('/{username}', 'ProfileController@show');
 

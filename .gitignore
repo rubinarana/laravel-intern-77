@@ -13,3 +13,6 @@ yarn-error.log
 docker
 v8-compile-cache-0/*
 ./idea
+.DS_Store
+/public/js/app.js
+/public/js/app.js/LICENSE.txt
