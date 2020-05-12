@@ -1,0 +1,84 @@
+Index: app/Service/Social.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n   namespace App\\Service;\r\n   use App\\Http\\Requests\\User\\SocialRequest;\r\n   use Illuminate\\Http\\Request;\r\n   use Illuminate\\Support\\Facades;\r\n   use App\\SocialLink;\r\n\r\n   class Social{\r\n      public static function  Register(SocialRequest $request){\r\n          $user = SocialLink::Create([\r\n              'user_id'=> auth()->user()->id,\r\n              'name'=>$request->get('name'),\r\n              'link'=>$request->get('link')\r\n\r\n          ]);\r\n      }\r\n       public static function SocialLinks(Request $request){\r\n          $req = $request->all();\r\n\r\n           for($i = 0 ; $i < count($req['work_place']); $i++) {\r\n               $user = Experience::create([\r\n                   'user_id' => auth()->user()->id,\r\n                   'work_place' => $req['work_place'][$i],\r\n                   'start_at' => $req['start_at'][$i],\r\n                   'end_at' => $req['end_at'][$i]\r\n               ]);\r\n               $user->save();\r\n           }\r\n           return response()->json([\r\n               'message' => 'successfully post'\r\n           ]);\r\n           return back;\r\n       }\r\n\r\n\r\n//   $social = SocialLink::Create([\r\n//   'user_id'=> auth()->user()->id,\r\n//   'name'=>$request->get('name'),\r\n//   'link'=>$request->get('link')\r\n   }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Service/Social.php	(revision a34c38429af0c0a353afe71e1c4f16f9b2c9fc7b)
++++ app/Service/Social.php	(date 1589274739918)
+@@ -4,6 +4,7 @@
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades;
+    use App\SocialLink;
++   use App\Experience;
+ 
+    class Social{
+       public static function  Register(SocialRequest $request){
+@@ -15,21 +16,23 @@
+           ]);
+       }
+        public static function SocialLinks(Request $request){
+-          $req = $request->all();
+-
+-           for($i = 0 ; $i < count($req['work_place']); $i++) {
+-               $user = Experience::create([
+-                   'user_id' => auth()->user()->id,
+-                   'work_place' => $req['work_place'][$i],
+-                   'start_at' => $req['start_at'][$i],
+-                   'end_at' => $req['end_at'][$i]
+-               ]);
+-               $user->save();
+-           }
+-           return response()->json([
+-               'message' => 'successfully post'
+-           ]);
+-           return back;
++//           $req = $request->all();
++//
++//           for ($i = 0; $i < count($req['work_place']); $i++) {
++//               $user = Experience::create([
++//                   'user_id' => auth()->user()->id,
++//                   'work_place' => $req['work_place'][$i],
++//                   'start_at' => $req['start_at'][$i],
++//                   'end_at' => $req['end_at'][$i]
++//               ]);
++//               $user->save();
++//       //dd($req);
++//           }
++//
++//           return response()->json([
++//               'message' => 'successfully post'
++//           ]);
++//           return back;
+        }
+ 
+ 
+Index: app/Http/Controllers/IndexController2.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Http\\Controllers;\r\n\r\nuse App\\Experience;\r\nuse App\\SocialLink;\r\nuse Illuminate\\Http\\Request;\r\nuse App\\User;\r\n\r\nclass IndexController2 extends Controller\r\n{\r\n    public function users()\r\n    {\r\n        $users = \\App\\User::paginate(10);\r\n        return view('users_view')->with('users', $users);\r\n    }\r\n\r\n    public function getExperience(Request $request)\r\n    {\r\n        return view('experience');\r\n    }\r\n\r\n    public function socialLinks()\r\n    {\r\n        return view('social_links');\r\n    }\r\n\r\n    public function Experience(Request $request)\r\n    {\r\n        //$exp = auth()->user()->id;\r\n        //dd($exp);\r\n        $req = $request->all();\r\n\r\n        for ($i = 0; $i < count($req['work_place']); $i++) {\r\n            $user = Experience::create([\r\n                'user_id' => auth()->user()->id,\r\n                'work_place' => $req['work_place'][$i],\r\n                'start_at' => $req['start_at'][$i],\r\n                'end_at' => $req['end_at'][$i]\r\n            ]);\r\n            $user->save();\r\n        }\r\n        return response()->json([\r\n            'message' => 'successfully post'\r\n        ]);\r\n        return back;\r\n    }\r\n\r\n    public function Social(Request $request)\r\n    {\r\n        //dd('here');\r\n        $req = $request->all();\r\n        //  dd($req);\r\n        for ($i = 0; $i < count($req['name']); $i++) {\r\n            $user = SocialLink::create([\r\n                'user_id' => auth()->user()->id,\r\n                'name' => $req['name'][$i],\r\n                'link' => $req['link'][$i],\r\n            ]);\r\n            $user->save();\r\n        }\r\n        return response()->json([\r\n            'message' => 'successfully post'\r\n        ]);\r\n        return back;\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/Http/Controllers/IndexController2.php	(revision a34c38429af0c0a353afe71e1c4f16f9b2c9fc7b)
++++ app/Http/Controllers/IndexController2.php	(date 1589274739889)
+@@ -3,6 +3,7 @@
+ namespace App\Http\Controllers;
+ 
+ use App\Experience;
++use App\Service\Social;
+ use App\SocialLink;
+ use Illuminate\Http\Request;
+ use App\User;
+@@ -27,8 +28,8 @@
+ 
+     public function Experience(Request $request)
+     {
+-        //$exp = auth()->user()->id;
+-        //dd($exp);
++       // $req = Social::SocialLinks($request);
++
+         $req = $request->all();
+ 
+         for ($i = 0; $i < count($req['work_place']); $i++) {

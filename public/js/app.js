@@ -50722,7 +50722,9 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
+ss
   
+
 
 )
 
@@ -50758,9 +50760,13 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4& ***!
   \**********************************************************************************/
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./experience-form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/experience-form.vue?vue&type=script&lang=js&");
+
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
-/***/ }),
+
+/***/ 
 
 /***/ "./resources/js/components/experience-form.vue?vue&type=template&id=279a704c&":
 /*!************************************************************************************!*\
@@ -50880,7 +50886,11 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
+ 
+  
 
+
+ 
 )
 
 /* hot reload */
@@ -50900,7 +50910,11 @@ component.options.__file = "resources/js/components/social-form.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_social_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./social-form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/social-form.vue?vue&type=script&lang=js&");
+
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_social_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_social_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+
 
 /***/ }),
 
@@ -50929,15 +50943,12 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 module.exports = __webpack_require__(/*! C:\Users\Global\Desktop\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
-=======
 module.exports = __webpack_require__(/*! E:\xampp\htdocs\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
->>>>>>> 6a6d5179ee021428ddd6740e1d655139b95db0cc
-=======
+
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
->>>>>>> 451124379218def5a7625b14d204a7f769ed0317
+ 
 
 
 /***/ })
