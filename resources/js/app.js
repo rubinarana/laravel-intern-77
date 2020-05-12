@@ -22,11 +22,8 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('follow-unfollow', require('./components/FollowUnFollow.vue').default);
 Vue.component('profile-state', require('./components/profile_state.vue').default);
-<<<<<<< HEAD
 Vue.component('reference-form', require('./components/ReferenceForm.vue').default);
-=======
 // Vue.component('multi-form', require('./components/multi_form.vue').default);
->>>>>>> 7698de74a5ffb82ead0cced0d775f41435bb264e
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
