@@ -1,21 +1,14 @@
-<!-- <?php
-
-
+<?php
 namespace App\Http\Controllers;
 
-use App\Services\UserProfileServices;
 use App\userprofile;
-
-
-
 use App\Http\Requests\UserProfileRequest;
+
 use Illuminate\Http\Request;
-
+use App\Services\UserProfileServices;
 use App\Services\SkillService;
-
 use App\Services\EducationDetailService;
 
->>>>>>> 7698de74a5ffb82ead0cced0d775f41435bb264e
 
 class IndexController2 extends Controller
 {
@@ -29,10 +22,10 @@ class IndexController2 extends Controller
 		return view('skills');
 	}
 
-	  // function addUserSkill(Request $request){
-   //      $skillDetail = SkillService::insertSkill($request);
-   //      return back();
-   //  }
+	  function addUserSkill(Request $request){
+        $skillDetail = SkillService::insertSkill($request);
+        return back();
+    }
 
 	public function create(RegisterSkillRequest $request)
 	{
