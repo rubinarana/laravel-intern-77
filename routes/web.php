@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/profile/create/step/1','userprofile')->middleware('auth');
 Route::post('/userprofile', 'IndexController2@userprofile')->name('userprofile');
+
 Auth::routes();
 
 Route::get('/', 'IndexController@index');
@@ -29,6 +30,7 @@ Route::resource('profile', Profile::class);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 //  Route Grouping
 Route::middleware(['auth'])->group(function() {
@@ -44,6 +46,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/user/educationDetail2', 'IndexController2@educationDetail2')->name('educationDetail2');
 });
 
+
+ Route::get('/skills', 'IndexController2@userdetail')->name('skills');
+
 Route::get('/profile', 'ProfileController@index');
 Route::get('/{username}', 'ProfileController@show');
-

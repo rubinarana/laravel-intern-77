@@ -19,6 +19,19 @@ class IndexController2 extends Controller
         $users = \App\User::paginate(10);
         return view('users_view')->with('users', $users);
     }
+
+    public function userdetail()
+	{
+		return view('skills');
+	}
+
+	public function create(RegisterSkillRequest $request)
+	{
+		$skill=SkillService::registeredSkill($request);
+		if (!is_null($skill)) {
+			ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
+		}
+	}
     function educationDetail(){
         $user = auth()->user();
         return view('EducationDetail')->with('user',$user);
@@ -43,9 +56,7 @@ class IndexController2 extends Controller
         
         return back();
     }
-    
-
-
+ 
     public function userprofile(UserProfileRequest $request)
     {
         UserProfileServices::store($request);
