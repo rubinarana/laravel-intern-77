@@ -57,7 +57,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Skill::class);
     }
-}
+
 
     public function EducationDetail()
     {

@@ -5,22 +5,26 @@ use App\userprofile;
 use App\Http\Requests\UserProfileRequest;
 
 use Illuminate\Http\Request;
+
 use App\Services\UserProfileServices;
 use App\Services\SkillService;
-use App\Services\EducationDetailService;
+use App\Services\ReferenceService;
 
+use App\Services\EducationDetailService;
 
 class IndexController2 extends Controller
 {
-    public function users() {
+    public function users()
+    {
         $users = \App\User::paginate(10);
         return view('users_view')->with('users', $users);
     }
 
     public function userdetail()
-	{
-		return view('skills');
-	}
+    {
+        return view('skills');
+    }
+
 
 	  function addUserSkill(Request $request){
         $skillDetail = SkillService::insertSkill($request);
@@ -34,16 +38,41 @@ class IndexController2 extends Controller
 			ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
 		}
 	}
-    function educationDetail(){
+    function educationDetail()
+      
+    public function references()
+    {
+
         $user = auth()->user();
-        return view('EducationDetail')->with('user',$user);
+        return view('references')->with('user', $user);
     }
-    function educationDetail2(){
+
+    public function addReferences(Request $request)
+    {
+        ReferenceService::AddReferenceData($request);
+        return back();
+    }
+
+    public function create(RegisterSkillRequest $request)
+    {
+        $skill = SkillService::registeredSkill($request);
+        if (!is_null($skill)) {
+            ResponseService::sendHtmlResponse($skill, 'skills', 'skill sucessfully added');
+        }
+    }
+    function educationDetail()
+    {
         $user = auth()->user();
-        return view('EducationDetail2')->with('user',$user);
+        return view('EducationDetail')->with('user', $user);
     }
-    function addEducationDetails(Request $request){
-        
+    function educationDetail2()
+    {
+        $user = auth()->user();
+        return view('references')->with('user', $user);
+    }
+    function addEducationDetails(Request $request)
+    {
+
         // dd($request);
         // $validation = array(
         //     'institute'=>'required',
@@ -51,19 +80,18 @@ class IndexController2 extends Controller
         //     'started_date'=>'required',
         //     'end_date'=>'required'
         // );
-        
+
         // $request->validate($validation);
-        
+
         $educationDetail = EducationDetailService::insertEducationDetail($request);
-        
+
         return back();
     }
- 
+
     public function userprofile(UserProfileRequest $request)
     {
         UserProfileServices::store($request);
         return back();
-
     }
 }
  -->
