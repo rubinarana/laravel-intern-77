@@ -3,8 +3,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\UserProfileServices;
+use App\userprofile;
+
+
+
+use App\Http\Requests\UserProfileRequest;
 use Illuminate\Http\Request;
 use App\Services\EducationDetailService;
+
 
 class IndexController2 extends Controller
 {
@@ -37,4 +44,12 @@ class IndexController2 extends Controller
         return back();
     }
     
+
+
+    public function userprofile(UserProfileRequest $request)
+    {
+        UserProfileServices::store($request);
+        return back();
+
+    }
 }
