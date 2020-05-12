@@ -1,13 +1,7 @@
 <?php
-
-
 namespace App\Http\Controllers;
-
 use App\Services\UserProfileServices;
 use App\userprofile;
-
-
-
 use App\Http\Requests\UserProfileRequest;
 use Illuminate\Http\Request;
 use App\Services\EducationDetailService;
@@ -41,7 +35,7 @@ class IndexController2 extends Controller
         return view('EducationDetail2')->with('user',$user);
     }
     function addEducationDetails(Request $request){
-        
+
         // dd($request);
         // $validation = array(
         //     'institute'=>'required',
@@ -49,14 +43,14 @@ class IndexController2 extends Controller
         //     'started_date'=>'required',
         //     'end_date'=>'required'
         // );
-        
+
         // $request->validate($validation);
-        
+
         $educationDetail = EducationDetailService::insertEducationDetail($request);
-        
+
         return back();
     }
- 
+
     public function userprofile(UserProfileRequest $request)
     {
         UserProfileServices::store($request);
