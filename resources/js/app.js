@@ -27,7 +27,10 @@ Vue.component('experience-form', require('./components/experience-form.vue').def
 
 
 
+Vue.component('reference-form', require('./components/ReferenceForm.vue').default);
+
 // Vue.component('multi-form', require('./components/multi_form.vue').default);
+ 
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -61,8 +60,6 @@ class User extends Authenticatable
         return $this->hasMany(Skill::class);
     }
 
-
-}
 
     public function EducationDetail()
     {
