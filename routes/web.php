@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::view('/profile/create/step/1','userprofile')->middleware('auth');
+Route::post('/userprofile', 'IndexController2@userprofile')->name('userprofile');
 Auth::routes();
 
 Route::get('/', 'IndexController@index');
