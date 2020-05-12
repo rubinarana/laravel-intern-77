@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\SkillService;
 
 class IndexController2 extends Controller
 {
@@ -15,12 +16,8 @@ class IndexController2 extends Controller
 		return view('skills');
 	}
 
-	// public function create(RegisterSkillRequest $request)
-	// {
-	// 	$skill=SkillService::registeredSkill($request);
-	// 	if (!is_null($skill)) {
-	// 		ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
-	// 	}
-	// }
-
+	  // function addUserSkill(Request $request){
+   //      $skillDetail = SkillService::insertSkill($request);
+   //      return back();
+   //  }
 }
