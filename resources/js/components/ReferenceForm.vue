@@ -64,7 +64,7 @@ export default {
             this.references.splice(index, 1);
         },
         submit(){
-            axios.post('/user/references'){
+            axios.post('/user/references')({
                 references: this.references
             })
         }

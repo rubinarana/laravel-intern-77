@@ -22,7 +22,11 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('follow-unfollow', require('./components/FollowUnFollow.vue').default);
 Vue.component('profile-state', require('./components/profile_state.vue').default);
+<<<<<<< HEAD
 Vue.component('reference-form', require('./components/ReferenceForm.vue').default);
+=======
+// Vue.component('multi-form', require('./components/multi_form.vue').default);
+>>>>>>> 7698de74a5ffb82ead0cced0d775f41435bb264e
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,3 +37,32 @@ Vue.component('reference-form', require('./components/ReferenceForm.vue').defaul
 const app = new Vue({
     el: '#app',
 });
+
+
+  
+  $(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+   
+    var x = 1; //initlal text box count
+  
+  
+   $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+  
+         //text box increment
+            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            x++; 
+    }
+    });
+   
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+       
+    e.preventDefault(); 
+    $(this).parent('div').remove(); 
+    x--;
+    })
+});
+  

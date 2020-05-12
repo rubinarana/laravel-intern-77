@@ -50459,7 +50459,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Global\Desktop\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
+=======
+module.exports = __webpack_require__(/*! E:\xampp\htdocs\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
+>>>>>>> 6a6d5179ee021428ddd6740e1d655139b95db0cc
 
 
 /***/ })
