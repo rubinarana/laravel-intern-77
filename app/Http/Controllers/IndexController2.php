@@ -1,40 +1,58 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Services\UserProfileServices;
 use App\userprofile;
 use App\Http\Requests\UserProfileRequest;
 use Illuminate\Http\Request;
+use App\Services\ReferenceService;
 use App\Services\EducationDetailService;
-
 
 class IndexController2 extends Controller
 {
-    public function users() {
+    public function users()
+    {
         $users = \App\User::paginate(10);
         return view('users_view')->with('users', $users);
     }
 
     public function userdetail()
-	{
-		return view('skills');
-	}
+    {
+        return view('skills');
+    }
 
-	public function create(RegisterSkillRequest $request)
-	{
-		$skill=SkillService::registeredSkill($request);
-		if (!is_null($skill)) {
-			ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
-		}
-	}
-    function educationDetail(){
+    public function references()
+    {
         $user = auth()->user();
-        return view('EducationDetail')->with('user',$user);
+        return view('references')->with('user', $user);
     }
-    function educationDetail2(){
+
+    public function addReferences(Request $request)
+    {
+        ReferenceService::AddReferenceData($request);
+        return back();
+    }
+
+    public function create(RegisterSkillRequest $request)
+    {
+        $skill = SkillService::registeredSkill($request);
+        if (!is_null($skill)) {
+            ResponseService::sendHtmlResponse($skill, 'skills', 'skill sucessfully added');
+        }
+    }
+    function educationDetail()
+    {
         $user = auth()->user();
-        return view('EducationDetail2')->with('user',$user);
+        return view('EducationDetail')->with('user', $user);
     }
-    function addEducationDetails(Request $request){
+    function educationDetail2()
+    {
+        $user = auth()->user();
+        return view('references')->with('user', $user);
+    }
+    function addEducationDetails(Request $request)
+    {
 
         // dd($request);
         // $validation = array(
@@ -55,6 +73,5 @@ class IndexController2 extends Controller
     {
         UserProfileServices::store($request);
         return back();
-
     }
 }

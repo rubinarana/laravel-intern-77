@@ -1977,10 +1977,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReferenceForm.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ReferenceForm.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+=======
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/experience-form.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/experience-form.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
+>>>>>>> 451124379218def5a7625b14d204a7f769ed0317
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2011,6 +2018,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      references: []
+    };
+  },
+  methods: {
+    addReferences: function addReferences() {
+      this.references.push({});
+    },
+    removeReferences: function removeReferences(index) {
+      this.references.splice(index, 1);
+    },
+    submit: function submit() {
+      axios.post('/form', {
+        references: this.references
+=======
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2039,6 +2092,7 @@ __webpack_require__.r(__webpack_exports__);
         workPlace: this.workPlace,
         start: this.start,
         end: this.end
+>>>>>>> 451124379218def5a7625b14d204a7f769ed0317
       });
     }
   }
@@ -37795,10 +37849,17 @@ render._withStripped = true
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4& ***!
+  \****************************************************************************************************************************************************************************************************************/
+=======
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/experience-form.vue?vue&type=template&id=279a704c&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/experience-form.vue?vue&type=template&id=279a704c& ***!
   \******************************************************************************************************************************************************************************************************************/
+>>>>>>> 451124379218def5a7625b14d204a7f769ed0317
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37810,6 +37871,179 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+<<<<<<< HEAD
+  return _c(
+    "div",
+    { attrs: { method: "POST" } },
+    [
+      _c("h1", [_vm._v("References")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "button" },
+          on: { click: _vm.addReferences }
+        },
+        [_vm._v("Add More")]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.references, function(rf, index) {
+        return _c("div", [
+          _c(
+            "button",
+            {
+              key: index,
+              staticClass: "btn btn-danger float-right",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.removeReferences(index)
+                }
+              }
+            },
+            [_vm._v("X")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "formGroupExampleInput" } }, [
+              _vm._v("Name:")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: rf.name,
+                  expression: "rf.name"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", name: "name", placeholder: "Enter name" },
+              domProps: { value: rf.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(rf, "name", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "formGroupExampleInput2" } }, [
+              _vm._v("Email:")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: rf.email,
+                  expression: "rf.email"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "email",
+                name: "email",
+                placeholder: "Enter email"
+              },
+              domProps: { value: rf.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(rf, "email", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "formGroupExampleInput2" } }, [
+              _vm._v("Contact:")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: rf.contact,
+                  expression: "rf.contact"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "contact",
+                placeholder: "Enter contact"
+              },
+              domProps: { value: rf.contact },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(rf, "contact", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "formGroupExampleInput2" } }, [
+              _vm._v("Designation:")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: rf.designation,
+                  expression: "rf.designation"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                name: "designation",
+                placeholder: "Enter designation"
+              },
+              domProps: { value: rf.designation },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(rf, "designation", $event.target.value)
+                }
+              }
+            })
+          ])
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "submit" },
+          on: { click: _vm.submit }
+        },
+        [_vm._v("Submit")]
+      )
+    ],
+    2
+  )
+=======
   return _c("div", { staticClass: "container mb-5" }, [
     _c(
       "button",
@@ -37951,6 +38185,7 @@ var render = function() {
       [_vm._v("Submit")]
     )
   ])
+>>>>>>> 451124379218def5a7625b14d204a7f769ed0317
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50319,6 +50554,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('follow-unfollow', __webpack_require__(/*! ./components/FollowUnFollow.vue */ "./resources/js/components/FollowUnFollow.vue")["default"]);
 Vue.component('profile-state', __webpack_require__(/*! ./components/profile_state.vue */ "./resources/js/components/profile_state.vue")["default"]);
+Vue.component('reference-form', __webpack_require__(/*! ./components/ReferenceForm.vue */ "./resources/js/components/ReferenceForm.vue")["default"]);
 Vue.component('social-form', __webpack_require__(/*! ./components/social-form.vue */ "./resources/js/components/social-form.vue")["default"]);
 Vue.component('experience-form', __webpack_require__(/*! ./components/experience-form.vue */ "./resources/js/components/experience-form.vue")["default"]);
 /**
@@ -50447,6 +50683,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ReferenceForm.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/ReferenceForm.vue ***!
+  \***************************************************/
+/*! no static exports found */
 /***/ "./resources/js/components/experience-form.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/experience-form.vue ***!
@@ -50456,6 +50697,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ReferenceForm_vue_vue_type_template_id_15f94ed4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ReferenceForm.vue?vue&type=template&id=15f94ed4& */ "./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4&");
+/* harmony import */ var _ReferenceForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReferenceForm.vue?vue&type=script&lang=js& */ "./resources/js/components/ReferenceForm.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ReferenceForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ReferenceForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 /* harmony import */ var _experience_form_vue_vue_type_template_id_279a704c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./experience-form.vue?vue&type=template&id=279a704c& */ "./resources/js/components/experience-form.vue?vue&type=template&id=279a704c&");
 /* harmony import */ var _experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./experience-form.vue?vue&type=script&lang=js& */ "./resources/js/components/experience-form.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
@@ -50467,6 +50712,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ReferenceForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ReferenceForm_vue_vue_type_template_id_15f94ed4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ReferenceForm_vue_vue_type_template_id_15f94ed4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   _experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _experience_form_vue_vue_type_template_id_279a704c___WEBPACK_IMPORTED_MODULE_0__["render"],
   _experience_form_vue_vue_type_template_id_279a704c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -50474,16 +50722,23 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
+  
 
 )
 
 /* hot reload */
 if (false) { var api; }
+component.options.__file = "resources/js/components/ReferenceForm.vue"
 component.options.__file = "resources/js/components/experience-form.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
+/***/ "./resources/js/components/ReferenceForm.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/ReferenceForm.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! no static exports found */
 /***/ "./resources/js/components/experience-form.vue?vue&type=script&lang=js&":
 /*!******************************************************************************!*\
   !*** ./resources/js/components/experience-form.vue?vue&type=script&lang=js& ***!
@@ -50493,6 +50748,15 @@ component.options.__file = "resources/js/components/experience-form.vue"
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReferenceForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ReferenceForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReferenceForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ReferenceForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4& ***!
+  \**********************************************************************************/
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./experience-form.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/experience-form.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
@@ -50507,6 +50771,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReferenceForm_vue_vue_type_template_id_15f94ed4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ReferenceForm.vue?vue&type=template&id=15f94ed4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ReferenceForm.vue?vue&type=template&id=15f94ed4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReferenceForm_vue_vue_type_template_id_15f94ed4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ReferenceForm_vue_vue_type_template_id_15f94ed4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_template_id_279a704c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./experience-form.vue?vue&type=template&id=279a704c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/experience-form.vue?vue&type=template&id=279a704c&");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_experience_form_vue_vue_type_template_id_279a704c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
@@ -50661,7 +50929,15 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+module.exports = __webpack_require__(/*! C:\Users\Global\Desktop\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
+=======
+module.exports = __webpack_require__(/*! E:\xampp\htdocs\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
+>>>>>>> 6a6d5179ee021428ddd6740e1d655139b95db0cc
+=======
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel-intern-77\resources\js\app.js */"./resources/js/app.js");
+>>>>>>> 451124379218def5a7625b14d204a7f769ed0317
 
 
 /***/ })
