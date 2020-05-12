@@ -18,9 +18,10 @@ class CreateEducationDetailsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('institute');
             $table->string('degree');
-            $table->date('started_date');
-            $table->date('end_date');
+            $table->string('started_date');
+            $table->string('end_date');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
