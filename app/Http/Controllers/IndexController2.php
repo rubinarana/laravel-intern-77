@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\UserProfileServices;
+use App\userprofile;
+use App\Http\Requests\UserProfileRequest;
 use Illuminate\Http\Request;
 use App\Services\ReferenceService;
+use App\Services\EducationDetailService;
 
 class IndexController2 extends Controller
 {
@@ -13,37 +17,43 @@ class IndexController2 extends Controller
         return view('users_view')->with('users', $users);
     }
 
-<<<<<<< HEAD
+    public function userdetail()
+    {
+        return view('skills');
+    }
+
     public function references()
     {
-=======
-    public function userdetail()
-	{
-		return view('skills');
-	}
-
-	public function create(RegisterSkillRequest $request)
-	{
-		$skill=SkillService::registeredSkill($request);
-		if (!is_null($skill)) {
-			ResponseService::sendHtmlResponse($skill,'skills','skill sucessfully added');
-		}
-	}
-    function educationDetail(){
-        $user = auth()->user();
-        return view('EducationDetail')->with('user',$user);
-    }
-    function educationDetail2(){
->>>>>>> 7698de74a5ffb82ead0cced0d775f41435bb264e
         $user = auth()->user();
         return view('references')->with('user', $user);
     }
-<<<<<<< HEAD
 
     public function addReferences(Request $request)
-=======
-    function addEducationDetails(Request $request){
-        
+    {
+        ReferenceService::AddReferenceData($request);
+        return back();
+    }
+
+    public function create(RegisterSkillRequest $request)
+    {
+        $skill = SkillService::registeredSkill($request);
+        if (!is_null($skill)) {
+            ResponseService::sendHtmlResponse($skill, 'skills', 'skill sucessfully added');
+        }
+    }
+    function educationDetail()
+    {
+        $user = auth()->user();
+        return view('EducationDetail')->with('user', $user);
+    }
+    function educationDetail2()
+    {
+        $user = auth()->user();
+        return view('references')->with('user', $user);
+    }
+    function addEducationDetails(Request $request)
+    {
+
         // dd($request);
         // $validation = array(
         //     'institute'=>'required',
@@ -51,18 +61,17 @@ class IndexController2 extends Controller
         //     'started_date'=>'required',
         //     'end_date'=>'required'
         // );
-        
+
         // $request->validate($validation);
-        
+
         $educationDetail = EducationDetailService::insertEducationDetail($request);
-        
+
         return back();
     }
- 
+
     public function userprofile(UserProfileRequest $request)
->>>>>>> 7698de74a5ffb82ead0cced0d775f41435bb264e
     {
-        ReferenceService::AddReferenceData($request);
+        UserProfileServices::store($request);
         return back();
     }
 }
